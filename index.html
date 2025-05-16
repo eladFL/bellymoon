@@ -606,27 +606,34 @@
             <h2 class="section-title">הצטרפו אלינו</h2>
             
             <div class="form-container">
-                <form class="contact-form">
+<form class="contact-form" action="https://formspree.io/f/https://formspree.io/f/xgvkdker" method="POST">
+
                     <div class="form-group">
                         <label for="name" class="form-label">שם מלא</label>
-                        <input type="text" id="name" class="form-input" required>
+                        <input type="text" id="name" name="name" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">אימייל</label>
-                        <input type="email" id="email" class="form-input" required>
+                        <input type="email" id="email" name="name" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label for="phone" class="form-label">טלפון</label>
-                        <input type="tel" id="phone" class="form-input" required>
+                        <input type="tel" id="phone" name="name" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label for="due-date" class="form-label">תאריך לידה משוער / שבוע</label>
-                        <input type="text" id="due-date" class="form-input" required>
+                        <input type="text" id="due-date" name="name" class="form-input" required>
                     </div>
                     
                     <button type="submit" class="cta-button">שמרו לי מקום</button>
                     
                     <p class="form-note">מספר המקומות מוגבל - ניצור איתכם קשר בהקדם</p>
+<div id="form-success" style="display:none; color:var(--muted-gold); margin-top:20px; font-weight:bold;">
+    תודה! הטופס נשלח בהצלחה. ניצור איתך קשר בהקדם.
+</div>
+<div id="form-error" style="display:none; color:#e74c3c; margin-top:20px; font-weight:bold;">
+    אירעה שגיאה בשליחת הטופס. אנא נסו שוב או צרו קשר בטלפון.
+</div>
                 </form>
             </div>
         </div>
@@ -659,22 +666,40 @@
     </footer>
 
     <script>
-        // Simple slider functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const sliderContainer = document.querySelector('.testimonial-container');
-            const dots = document.querySelectorAll('.slider-dot');
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    // Update slider position
-                    sliderContainer.style.transform = `translateX(${index * -100}%)`;
-                    
-                    // Update active dot
-                    dots.forEach(d => d.classList.remove('active'));
-                    dot.classList.add('active');
-                });
+      // Simple slider functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const sliderContainer = document.querySelector('.testimonial-container');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Update slider position
+                sliderContainer.style.transform = `translateX(${index * -100}%)`;
+                
+                // Update active dot
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
             });
         });
-    </script>
+
+        // Handle form submission
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            // Check if we were redirected back with success/error
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') && urlParams.get('success') === 'true') {
+                document.getElementById('form-success').style.display = 'block';
+                // Scroll to the form to make the message visible
+                document.querySelector('.contact').scrollIntoView({behavior: 'smooth'});
+                // Remove the query parameters to prevent showing the message on refresh
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } else if (urlParams.has('error')) {
+                document.getElementById('form-error').style.display = 'block';
+                document.querySelector('.contact').scrollIntoView({behavior: 'smooth'});
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+    });
+</script>
 </body>
 </html>
