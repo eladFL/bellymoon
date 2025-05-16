@@ -606,8 +606,9 @@
             <h2 class="section-title">הצטרפו אלינו</h2>
             
             <div class="form-container">
-<form class="contact-form" action="https://formspree.io/f/https://formspree.io/f/xgvkdker" method="POST">
+<form class="contact-form" action="https://formspree.io/f/xgvkdker" method="POST">
 <input type="hidden" name="_subject" value="פנייה חדשה מאתר BELLYMOON">
+<input type="hidden" name="_next" value="https://eladfl.github.io/bellymoon/">
 
                     <div class="form-group">
                         <label for="name" class="form-label">שם מלא</label>
@@ -619,7 +620,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone" class="form-label">טלפון</label>
-                        <input type="tel" id="phone" name="name" class="form-input" required>
+                        <input type="tel" id="phone" name="phone" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label for="due-date" class="form-label">תאריך לידה משוער / שבוע</label>
@@ -666,8 +667,8 @@
         </div>
     </footer>
 
-    <script>
-      // Simple slider functionality
+   <script>
+    // Simple slider functionality
     document.addEventListener('DOMContentLoaded', function() {
         const sliderContainer = document.querySelector('.testimonial-container');
         const dots = document.querySelectorAll('.slider-dot');
@@ -683,22 +684,22 @@
             });
         });
 
-        // Handle form submission
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            // Check if we were redirected back with success/error
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('success') && urlParams.get('success') === 'true') {
-                document.getElementById('form-success').style.display = 'block';
-                // Scroll to the form to make the message visible
-                document.querySelector('.contact').scrollIntoView({behavior: 'smooth'});
-                // Remove the query parameters to prevent showing the message on refresh
-                window.history.replaceState({}, document.title, window.location.pathname);
-            } else if (urlParams.has('error')) {
-                document.getElementById('form-error').style.display = 'block';
-                document.querySelector('.contact').scrollIntoView({behavior: 'smooth'});
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
+        // Auto rotate the testimonials every 5 seconds
+        let currentSlide = 0;
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }, 5000);
+        
+        // Add form sent confirmation
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', function() {
+                // Show a simple alert before the form is sent to Formspree
+                alert('תודה! הטופס יישלח כעת. ניצור איתך קשר בהקדם.');
+            });
         }
     });
 </script>
