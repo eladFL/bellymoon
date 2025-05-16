@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BELLYMOON - חוויות ריטריט באילת לנשים בהריון וזוגות. מקום שקט ומפנק לפני סערת האהבה.">
+    <meta name="keywords" content="הריון, ריטריט, אילת, זוגות, ספא, מלון בוטיק, סדנאות טרום לידה">
+    <title>BELLYMOON - Your calm before the storm of love</title>
+    <style>
+        :root {
+            --off-white: #f8f5f2;
+            --blush-pink: #f2d5d5;
+            --muted-gold: #d4b98c;
+            --text-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--off-white);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/api/placeholder/1600/900') center/cover no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button {
+            background-color: var(--muted-gold);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+        
+        .cta-button:hover {
+            background-color: #c3a77a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px var(--shadow-color);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--blush-pink);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            flex: 1 1 calc(25% - 30px);
+            min-width: 200px;
+            background-color: var(--off-white);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature:hover .feature-icon {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow-color);
+        }
+        
+        .feature:hover .feature-icon img {
+            transform: scale(1.1);
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        /* Why Bellymoon Section */
+        .why-bellymoon {
+            padding: 100px 0;
+            background-color: var(--blush-pink);
+            text-align: center;
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit {
+            flex: 1 1 calc(25% - 30px);
+            min-width: 200px;
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .benefit:hover .benefit-icon {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow-color);
+        }
+        
+        .benefit:hover .benefit-icon img {
+            transform: scale(1.1);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial {
+            flex: 0 0 100%;
+            padding: 40px 20px;
+        }
+        
+        .testimonial-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid var(--blush-pink);
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-name {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--blush-pink);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--muted-gold);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--off-white);
+            text-align: center;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--muted-gold);
+            outline: none;
+        }
+        
+        .form-note {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--muted-gold);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .social-link img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--blush-pink);
+            transform: translateY(-3px);
+        }
+        
+        .social-link:hover img {
+            transform: scale(1.2);
+        }
+        
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            border-radius: 5px;
+            margin: 0 10px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-button:hover {
+            background-color: white;
+            color: #333;
+        }
+        
+        .legal {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .feature, .benefit {
+                flex: 1 1 calc(50% - 30px);
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .feature, .benefit {
+                flex: 1 1 100%;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">BELLYMOON</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BELLYMOON</h1>
+            <p>Your calm before the storm of love</p>
+            <button class="cta-button">הצטרפו לריטריט הבא שלנו</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">על החוויה</h2>
+            <p class="about-text">
+                BELLYMOON מציעה חוויית ריטריט ייחודית לזוגות מצפים באילת. אנו מספקים מרחב של שלווה, פינוק וחיבור זוגי משמעותי בתקופה המיוחדת של ההריון. במתחם הבוטיק שלנו תיהנו מתמהיל מושלם של תוכן מקצועי, התחדשות אישית וזוגית, ומנוחה מפנקת בסביבה יוקרתית מול נופי המדבר והים.
+            </p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="סדנאות טרום לידה">
+                    </div>
+                    <h3>סדנאות טרום לידה</h3>
+                    <p>סדנאות וסשנים בהובלת מיטב אנשי המקצוע בתחום ההריון והלידה</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="טיפולי ספא">
+                    </div>
+                    <h3>טיפולי ספא</h3>
+                    <p>עיסויים מותאמים להריון, טיפולי וואטסו, וצילומי בטן מקצועיים</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="מלון בוטיק עם בריכה">
+                    </div>
+                    <h3>מלון בוטיק עם בריכה</h3>
+                    <p>אירוח בסטנדרט גבוה בחדרים מעוצבים, בריכה פרטית ונוף מרהיב</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="שופינג ללא מע״מ">
+                    </div>
+                    <h3>שופינג ללא מע״מ</h3>
+                    <p>הטבות וליווי לרכישות ציוד לתינוק באילת ללא מע״מ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Bellymoon Section -->
+    <section class="why-bellymoon">
+        <div class="container">
+            <h2 class="section-title">למה BELLYMOON?</h2>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <img src="/api/placeholder/160/160" alt="זמן זוגי אינטימי">
+                    </div>
+                    <h3>זמן זוגי אינטימי</h3>
+                    <p>חוויה זוגית משמעותית לפני הגעת התינוק שתיזכר לשנים</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <img src="/api/placeholder/160/160" alt="בהובלת אנשי מקצוע">
+                    </div>
+                    <h3>בהובלת אנשי מקצוע</h3>
+                    <p>צוות מקצועי ומנוסה המתמחה בליווי זוגות בהריון</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <img src="/api/placeholder/160/160" alt="איזון בין תוכן ומנוחה">
+                    </div>
+                    <h3>איזון בין תוכן ומנוחה</h3>
+                    <p>תכנית מאוזנת המשלבת למידה, פינוק ושלווה</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <img src="/api/placeholder/160/160" alt="יתרונות המיקום">
+                    </div>
+                    <h3>יתרונות המיקום</h3>
+                    <p>אילת משלבת אקלים מושלם, נופים מרהיבים וקניות ללא מע״מ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">חוות דעת</h2>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-container">
+                    <div class="testimonial">
+                        <img src="/api/placeholder/240/240" alt="תמונת עדות" class="testimonial-image">
+                        <p class="testimonial-text">
+                            "החוויה ב-BELLYMOON הייתה מתנת ההריון הטובה ביותר שיכולנו לתת לעצמנו. הצלחנו להתחבר מחדש כזוג, ללמוד המון ולהתכונן ללידה בצורה רגועה ומפנקת. הצוות המקצועי והיחס האישי היו ברמה הגבוהה ביותר."
+                        </p>
+                        <p class="testimonial-name">מיכל ואסף, שבוע 32</p>
+                    </div>
+                    <div class="testimonial">
+                        <img src="/api/placeholder/240/240" alt="תמונת עדות" class="testimonial-image">
+                        <p class="testimonial-text">
+                            "אין מילים לתאר כמה הריטריט שינה את החוויה שלנו בהריון. היה לנו זמן איכות משמעותי ביחד, וקיבלנו כלים מעשיים להתמודדות עם הלידה וההורות. צילומי הבטן יישארו אצלנו כמזכרת מדהימה לכל החיים."
+                        </p>
+                        <p class="testimonial-name">יעל ודני, שבוע 28</p>
+                    </div>
+                    <div class="testimonial">
+                        <img src="/api/placeholder/240/240" alt="תמונת עדות" class="testimonial-image">
+                        <p class="testimonial-text">
+                            "הגענו לBELLYMOON עייפים ומתוחים מההכנות לקראת התינוק, וחזרנו זוג מחובר, רגוע ובטוח. הטיפולים, הסדנאות והאווירה המיוחדת נתנו לנו כוחות מחודשים וזכרונות שלא נשכח. ממליצים בחום!"
+                        </p>
+                        <p class="testimonial-name">שירה ואלון, שבוע 30</p>
+                    </div>
+                </div>
+                
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">הצטרפו אלינו</h2>
+            
+            <div class="form-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">שם מלא</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">אימייל</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">טלפון</label>
+                        <input type="tel" id="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="due-date" class="form-label">תאריך לידה משוער / שבוע</label>
+                        <input type="text" id="due-date" class="form-input" required>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">שמרו לי מקום</button>
+                    
+                    <p class="form-note">מספר המקומות מוגבל - ניצור איתכם קשר בהקדם</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">BELLYMOON</div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <img src="/api/placeholder/40/40" alt="פייסבוק">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="/api/placeholder/40/40" alt="לינקדאין">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="/api/placeholder/40/40" alt="אינסטגרם">
+                </a>
+            </div>
+            
+            <div>
+                <a href="tel:+972541234567" class="contact-button">התקשרו אלינו</a>
+                <a href="mailto:info@bellymoon.co.il" class="contact-button">שלחו אימייל</a>
+            </div>
+            
+            <p class="legal">© 2025 BELLYMOON. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderContainer = document.querySelector('.testimonial-container');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // Update slider position
+                    sliderContainer.style.transform = `translateX(${index * -100}%)`;
+                    
+                    // Update active dot
+                    dots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
