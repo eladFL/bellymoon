@@ -47,19 +47,19 @@
         }
         
         .logo {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-.logo-img {
-    height: 60px; /* הגדלה מ-40px ל-60px */
-    margin-left: 15px; /* הגדלת המרווח בין הלוגו לטקסט */
-    vertical-align: middle;
+        .logo-img {
+            height: 60px;
+            margin-left: 15px;
+            vertical-align: middle;
         }
         
         /* Hero Section */
@@ -120,6 +120,24 @@
             position: relative;
             overflow: hidden;
         }
+
+        .about:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, var(--blush-pink) 0%, transparent 25%);
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .about .container {
+            position: relative;
+            z-index: 1;
+        }
+
         .section-title {
             font-size: 36px;
             margin-bottom: 30px;
@@ -144,22 +162,7 @@
             line-height: 1.8;
             font-size: 18px;
         }
-        .about:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 80% 20%, var(--blush-pink) 0%, transparent 25%);
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-.about .container {
-    position: relative;
-    z-index: 1;
-}
+        
         .features {
             display: flex;
             flex-wrap: wrap;
@@ -168,7 +171,9 @@
             margin-top: 50px;
         }
         
-          feature {
+        .feature {
+            flex: 1 1 calc(25% - 30px);
+            min-width: 200px;
             background: linear-gradient(to bottom, white, var(--off-white));
             padding: 30px 20px;
             border-radius: 12px;
@@ -177,11 +182,13 @@
             border: 1px solid rgba(212, 185, 140, 0.1);
         }
 
-      .feature:hover {
+        .feature:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             border-color: rgba(212, 185, 140, 0.3);
-     .feature-icon {
+        }
+        
+        .feature-icon {
             width: 90px;
             height: 90px;
             margin: 0 auto 25px;
@@ -223,6 +230,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .why-bellymoon:before {
             content: '';
             position: absolute;
@@ -239,40 +247,51 @@
             position: relative;
             z-index: 1;
         }
-       .benefit {
-    background: linear-gradient(to bottom, white, #f9f9f9);
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-}
-
-.benefit:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, var(--muted-gold), var(--blush-pink));
-    opacity: 0.7;
-}
-
         
-       .benefit-icon {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 25px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    background-color: white;
-    padding: 5px;
-    border: 2px solid var(--muted-gold);
-}
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit {
+            flex: 1 1 calc(25% - 30px);
+            min-width: 200px;
+            background: linear-gradient(to bottom, white, #f9f9f9);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .benefit:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--muted-gold), var(--blush-pink));
+            opacity: 0.7;
+        }
+        
+        .benefit-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            background-color: white;
+            padding: 5px;
+            border: 2px solid var(--muted-gold);
+        }
+        
         .benefit-icon img {
             width: 100%;
             height: 100%;
@@ -415,19 +434,19 @@
             text-align: center;
         }
         
-       .footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
 
-.footer-logo-img {
-    height: 60px; /* התאם לגודל הרצוי */
-    margin-left: 10px;
+        .footer-logo-img {
+            height: 60px;
+            margin-left: 10px;
         }
         
         .social-links {
@@ -526,58 +545,63 @@
 </head>
 <body>
     <!-- Header -->
-   <header>
-    <div class="container">
-        <div class="logo">
-            <img src="images/LOGO1.png" alt="BELLYMOON Logo" class="logo-img">
-            BELLYMOON
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/LOGO1.png" alt="BELLYMOON Logo" class="logo-img">
+                BELLYMOON
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>BELLYMOON</h1>
             <p>Your calm before the storm of love</p>
-<button class="cta-button" onclick="document.querySelector('.contact').scrollIntoView({behavior: 'smooth'})">הצטרפו לריטריט הבא שלנו</button>        </div>
+            <button class="cta-button" onclick="document.querySelector('.contact').scrollIntoView({behavior: 'smooth'})">הצטרפו לריטריט הבא שלנו</button>
+        </div>
     </section>
 
     <!-- About Section -->
-<p class="about-text">
-    BELLYMOON מציעה חוויית ריטריט ייחודית לזוגות מצפים באילת. אנו מספקים מרחב של שלווה, פינוק וחיבור זוגי משמעותי בתקופה המיוחדת של ההריון. במתחם הבוטיק שלנו תיהנו מתמהיל מושלם של תוכן מקצועי, התחדשות אישית וזוגית, ומנוחה מפנקת בסביבה יוקרתית מול נופי המדבר והים.
-</p>
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">מה זה BELLYMOON?</h2>
+            <p class="about-text">
+                BELLYMOON מציעה חוויית ריטריט ייחודית לזוגות מצפים באילת. אנו מספקים מרחב של שלווה, פינוק וחיבור זוגי משמעותי בתקופה המיוחדת של ההריון. במתחם הבוטיק שלנו תיהנו מתמהיל מושלם של תוכן מקצועי, התחדשות אישית וזוגית, ומנוחה מפנקת בסביבה יוקרתית מול נופי המדבר והים.
+            </p>
 
-<div class="features">
-    <div class="feature">
-        <div class="feature-icon">
-            <img src="images/pregnant-woman-in-breathing-workshop1.jpg" alt="סדנאות טרום לידה">
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="images/pregnant-woman-in-breathing-workshop1.jpg" alt="סדנאות טרום לידה">
+                    </div>
+                    <h3>סדנאות טרום לידה</h3>
+                    <p>סדנאות וסשנים בהובלת מיטב אנשי המקצוע בתחום ההריון והלידה</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="טיפולי ספא">
+                    </div>
+                    <h3>טיפולי ספא</h3>
+                    <p>עיסויים מותאמים להריון, טיפולי וואטסו, וצילומי בטן מקצועיים</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="מלון בוטיק עם בריכה">
+                    </div>
+                    <h3>מלון בוטיק עם בריכה</h3>
+                    <p>אירוח בסטנדרט גבוה בחדרים מעוצבים, בריכה פרטית ונוף מרהיב</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/160/160" alt="שופינג ללא מע״מ">
+                    </div>
+                    <h3>שופינג ללא מע״מ</h3>
+                    <p>הטבות וליווי לרכישות ציוד לתינוק באילת ללא מע״מ</p>
+                </div>
+            </div>
         </div>
-        <h3>סדנאות טרום לידה</h3>
-        <p>סדנאות וסשנים בהובלת מיטב אנשי המקצוע בתחום ההריון והלידה</p>
-    </div>
-    <div class="feature">
-        <div class="feature-icon">
-            <img src="/api/placeholder/160/160" alt="טיפולי ספא">
-        </div>
-        <h3>טיפולי ספא</h3>
-        <p>עיסויים מותאמים להריון, טיפולי וואטסו, וצילומי בטן מקצועיים</p>
-    </div>
-    <div class="feature">
-        <div class="feature-icon">
-            <img src="/api/placeholder/160/160" alt="מלון בוטיק עם בריכה">
-        </div>
-        <h3>מלון בוטיק עם בריכה</h3>
-        <p>אירוח בסטנדרט גבוה בחדרים מעוצבים, בריכה פרטית ונוף מרהיב</p>
-    </div>
-    <div class="feature">
-        <div class="feature-icon">
-            <img src="/api/placeholder/160/160" alt="שופינג ללא מע״מ">
-        </div>
-        <h3>שופינג ללא מע״מ</h3>
-        <p>הטבות וליווי לרכישות ציוד לתינוק באילת ללא מע״מ</p>
-    </div>
-</div>
     </section>
 
     <!-- Why Bellymoon Section -->
@@ -658,14 +682,14 @@
     </section>
 
     <!-- Contact Section -->
-<section class="contact" id="contact-section">
+    <section class="contact" id="contact-section">
         <div class="container">
             <h2 class="section-title">הצטרפו אלינו</h2>
             
             <div class="form-container">
-<form class="contact-form" action="https://formspree.io/f/xgvkdker" method="POST">
-<input type="hidden" name="_subject" value="פנייה חדשה מאתר BELLYMOON">
-<input type="hidden" name="_next" value="https://eladfl.github.io/bellymoon/">
+                <form class="contact-form" action="https://formspree.io/f/xgvkdker" method="POST">
+                    <input type="hidden" name="_subject" value="פנייה חדשה מאתר BELLYMOON">
+                    <input type="hidden" name="_next" value="https://eladfl.github.io/bellymoon/">
 
                     <div class="form-group">
                         <label for="name" class="form-label">שם מלא</label>
@@ -687,12 +711,12 @@
                     <button type="submit" class="cta-button">שמרו לי מקום</button>
                     
                     <p class="form-note">מספר המקומות מוגבל - ניצור איתכם קשר בהקדם</p>
-<div id="form-success" style="display:none; color:var(--muted-gold); margin-top:20px; font-weight:bold;">
-    תודה! הטופס נשלח בהצלחה. ניצור איתך קשר בהקדם.
-</div>
-<div id="form-error" style="display:none; color:#e74c3c; margin-top:20px; font-weight:bold;">
-    אירעה שגיאה בשליחת הטופס. אנא נסו שוב או צרו קשר בטלפון.
-</div>
+                    <div id="form-success" style="display:none; color:var(--muted-gold); margin-top:20px; font-weight:bold;">
+                        תודה! הטופס נשלח בהצלחה. ניצור איתך קשר בהקדם.
+                    </div>
+                    <div id="form-error" style="display:none; color:#e74c3c; margin-top:20px; font-weight:bold;">
+                        אירעה שגיאה בשליחת הטופס. אנא נסו שוב או צרו קשר בטלפון.
+                    </div>
                 </form>
             </div>
         </div>
@@ -702,8 +726,8 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-    <img src="images/LOGO1.png" alt="BELLYMOON Logo" class="footer-logo-img">
-    BELLYMOON
+                <img src="images/LOGO1.png" alt="BELLYMOON Logo" class="footer-logo-img">
+                BELLYMOON
             </div>            
             <div class="social-links">
                 <a href="#" class="social-link">
@@ -726,41 +750,46 @@
         </div>
     </footer>
 
-   <script>
-    // Simple slider functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const sliderContainer = document.querySelector('.testimonial-container');
-        const dots = document.querySelectorAll('.slider-dot');
-        
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                // Update slider position
-                sliderContainer.style.transform = `translateX(${index * -100}%)`;
-                
-                // Update active dot
-                dots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
+    <script>
+        // Simple slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderContainer = document.querySelector('.testimonial-container');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // Update slider position
+                    sliderContainer.style.transform = `translateX(${index * -100}%)`;
+                    
+                    // Update active dot
+                    dots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                });
             });
-        });
 
-        // Auto rotate the testimonials every 5 seconds
-        let currentSlide = 0;
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % dots.length;
-            sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;
-            dots.forEach(d => d.classList.remove('active'));
-            dots[currentSlide].classList.add('active');
-        }, 5000);
-        
-        // Add form sent confirmation
-        const form = document.querySelector('.contact-form');
-        if (form) {
-            form.addEventListener('submit', function() {
-                // Show a simple alert before the form is sent to Formspree
-                alert('תודה! הטופס יישלח כעת. ניצור איתך קשר בהקדם.');
-            });
-        }
-    });
-</script>
+            // Auto rotate the testimonials every 5 seconds
+            let currentSlide = 0;
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                sliderContainer.style.transform = `translateX(${currentSlide *
+// Auto rotate the testimonials every 5 seconds
+            let currentSlide = 0;
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;
+                dots.forEach(d => d.classList.remove('active'));
+                dots[currentSlide].classList.add('active');
+            }, 5000);
+            
+            // Add form sent confirmation
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.addEventListener('submit', function() {
+                    // Show a simple alert before the form is sent to Formspree
+                    alert('תודה! הטופס יישלח כעת. ניצור איתך קשר בהקדם.');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
