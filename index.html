@@ -444,7 +444,7 @@
             letter-spacing: 2px;
         }
 
-        footer-logo-img {
+        .footer-logo-img {
             height: 15px;
             margin-left: 10px;
             width: auto;
@@ -555,6 +555,72 @@
             background-color: #128C7E !important;
             color: white !important;
         }
+        @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 48px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .feature, .benefit {
+        flex: 1 1 calc(50% - 20px);
+        min-width: calc(50% - 20px);
+    }
+    
+    .form-container {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    /* Mobile Contact Buttons */
+    .contact-button {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .feature, .benefit {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .logo-img {
+        height: 80px;
+    }
+    
+    /* Stack buttons vertically on small screens */
+    .contact-button {
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+        max-width: 280px;
+    }
+}
     </style>
 </head>
 <body>
@@ -784,7 +850,7 @@
             let currentSlide = 0;
             setInterval(() => {
                 currentSlide = (currentSlide + 1) % dots.length;
-                sliderContainer.style.transform = `translateX(${currentSlide *
+                sliderContainer.style.transform = `translateX(${currentSlide * -100}%)`;
 // Auto rotate the testimonials every 5 seconds
             let currentSlide = 0;
             setInterval(() => {
